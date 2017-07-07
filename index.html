@@ -1,0 +1,29 @@
+<html>
+   <head>
+      <title>LetsRobot Wireless Setup</title>
+   </head>
+   <body>
+      <div id="ssid_search" name="ssid_search">
+         Visible Networks (SSID):<br/>
+         <iframe name="search" id="search" src="/cgi-bin/search.py">
+         </iframe>
+      </div>
+      <hr/>
+      <div id="network_settings" name="network_settings">
+         <form action="/cgi-bin/set_network.py">
+            SSID:
+            <input type="text" name="SSID"><br/>
+            Password:
+            <input type="text" name="password"><br/>
+            <input type="submit" value="Submit">
+         </form>
+      </div>
+      <hr/>
+      <div name="current_connection" id="current_connection">
+      </div>
+      <script type="text/javascript">
+         document.getElementById("current_connection").innerHTML='<object type="text/html" data="/cgi-bin/current.py" ></object>';
+      </script>
+
+   </body>
+</html>
