@@ -3,7 +3,6 @@ from subprocess import call
 
 print "HTTP/1.1 302 Found"
 print "Location: /"
-print "Connection: close \r\n"
 
 form=cgi.FieldStorage()
 ssid = form.getvalue("SSID")
@@ -22,3 +21,5 @@ wpa.write("}\n")
 wpa.close()
 
 call(["wpa_cli -i wlan0 reconfigure > /dev/null"], shell=True)
+
+print "Connection: close \r\n"
